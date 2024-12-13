@@ -7,6 +7,10 @@
     font-family: "Poppins", sans-serif;
 }
 
+html {
+    scroll-behavior:smooth;
+}
+
 :root {
   --white-color: #fff;
   --dark-color: #620053;
@@ -300,6 +304,7 @@ header .navbar {
 }
 
 .testimonials-section .testimonial {
+    user-select: none;
     display: flex;
     padding: 35px;
     text-align: center;
@@ -437,6 +442,42 @@ header .navbar {
     background: transparent;
 }
 
+.footer-section {
+    padding: 20px 0;
+    background: var(--dark-color);
+}
+
+.footer-section .section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-section :where(.copyright-text, social-link, .policy-link) {
+    color: var(--white-color);
+    transition: 0.3s ease;
+}
+
+.footer-section .social-link-list {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-section .social-link-list .social-link {
+    color: rgb(60, 255, 0);
+    font-size: var(--font-size-l);
+}
+
+.footer-section .social-link-list .social-link:hover,
+.footer-section .policy-text .policy-link:hover {
+    color: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+.footer-section .policy-text .separator {
+    margin: 0 5px;
+    color: var(--white-color);
+}
 
 @media screen and (max-width: 1024px) {
     .menu-section .menu-list {
@@ -516,7 +557,8 @@ header .navbar {
         justify-content: center;
     }
 
-    .hero-section .hero-details :is(.subtitle, description), .about-section .about details, .contact-section .contact-form {
+    .hero-section .hero-details :is(.subtitle, description), 
+    .about-section .about details, .contact-section .contact-form {
         max-width: 100%;
     }
 
@@ -584,5 +626,10 @@ header .navbar {
 
     .testimonials-section .swiper-slide-button {
         display: none;
+    }
+
+    .footer-section .section-content {
+        flex-direction: column;
+        gap: 20px;
     }
 }
